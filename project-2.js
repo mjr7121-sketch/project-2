@@ -5,6 +5,9 @@
 import { LitElement, html, css } from "lit";
 import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
 import { I18NMixin } from "@haxtheweb/i18n-manager/lib/I18NMixin.js";
+import "./nav-bar.js";
+import "./team-info.js";
+import "./upcoming-events.js";
 
 /**
  * `project-2`
@@ -48,8 +51,7 @@ export class Project2 extends DDDSuper(I18NMixin(LitElement)) {
     css`
       :host {
         display: block;
-        color: var(--ddd-theme-primary);
-        background-color: var(--ddd-theme-accent);
+        background-color: var(--ddd-theme-default-alertUrgent);
         font-family: var(--ddd-font-navigation);
       }
       .wrapper {
@@ -59,14 +61,25 @@ export class Project2 extends DDDSuper(I18NMixin(LitElement)) {
       h3 span {
         font-size: var(--project-2-label-font-size, var(--ddd-font-size-s));
       }
+      .top-heading{
+        font-size: var(--ddd-font-size-m);
+        font-weight: var(--ddd-font-weight-bold);
+        color: var(--ddd-theme-default-skyBlue);
+      }
     `];
   }
 
   // Lit render the HTML
   render() {
     return html`
-<div class="wrapper">
-  <h3><span>${this.t.title}:</span> ${this.title}</h3>
+<div class="page">
+
+  <nav-bar></nav-bar>
+
+  <team-info></team-info>
+
+  <upcoming-events></upcoming-events>
+       
   <slot></slot>
 </div>`;
   }
