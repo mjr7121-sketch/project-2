@@ -1,1 +1,0 @@
-"we are a kids golf club!"
