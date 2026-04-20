@@ -2,10 +2,10 @@ import { LitElement, html, css } from "lit";
 import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
 import { I18NMixin } from "@haxtheweb/i18n-manager/lib/I18NMixin.js";
 
-export class Calendar extends DDDSuper(I18NMixin(LitElement)) {
+export class MyTryouts extends DDDSuper(I18NMixin(LitElement)) {
 
   static get tag() {
-    return "calendar";
+    return "my-tryouts";
   }
    static get properties() {
     return {
@@ -17,7 +17,7 @@ export class Calendar extends DDDSuper(I18NMixin(LitElement)) {
   constructor() {
     super();
     this.active = false;
-    this.topHeading = "Mini Master's Golf Club";
+    this.topHeading = "";
     };
   
     static get styles() {
@@ -41,7 +41,7 @@ export class Calendar extends DDDSuper(I18NMixin(LitElement)) {
 
   render() {
      return html`
-     <div class="calendar">
+     <div class="placeHolder">
         <h1 class="top-heading">${this.topHeading}</h1>
 
           <slot></slot>
@@ -50,4 +50,4 @@ export class Calendar extends DDDSuper(I18NMixin(LitElement)) {
   }
 }
 
-globalThis.customElements.define(Calendar.tag, Calendar);
+globalThis.customElements.define(MyTryouts.tag, MyTryouts);
