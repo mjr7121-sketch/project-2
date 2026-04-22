@@ -23,29 +23,57 @@ export class NavBar extends DDDSuper(I18NMixin(LitElement)) {
     static get styles() {
     return [super.styles,
     css`
-      :host {
+    :host {
         display: block;
         background-color: var(--ddd-theme-default-alertUrgent);
-      }
-      .top-heading{
+    }
+    .top-heading{
         color: var(--ddd-theme-default-forestGreen);
         font-weight: var(--ddd-font-weight-bold);
-      }
-      .placeHolder{
-       color: var(--ddd-theme-default-forestGreen);
-      }
+    }
+    .nav-links {
+        display: flex;
+        gap: var(--ddd-spacing-4); 
+    }
+    .nav-links a.about {
+        color: var(--ddd-theme-default-forestGreen);
+    }
+    .nav-links a.schedule {
+        color: var(--ddd-theme-default-forestGreen);
+    }
+    .nav-links a.teamInfo {
+        color: var(--ddd-theme-default-forestGreen);
+    }
+    .nav-links a.signUp {
+        color: var(--ddd-theme-default-white);
+        background-color: var(--ddd-theme-default-forestGreen);
+    }
+    
    
 
     `];
   }
 
+  _navigate(page) {
+  this.dispatchEvent(new CustomEvent("nav-change", {
+    detail: { page },
+    bubbles: true,
+    composed: true
+  }));
+}
+
   render() {
      return html`
      <div class="navBar">
         <h1 class="top-heading">${this.topHeading}</h1>
-        <p class ="placeHolder"> buttons go here such as about, schedule, roster, and sign up</p>
 
-          <slot></slot>
+       <div class="nav-links">
+      <a @click=${() => this._navigate("about")} class="about">About</a>
+      <a @click=${() => this._navigate("schedule")} class="schedule">Schedule</a>
+      <a @click=${() => this._navigate("teamInfo")} class="teamInfo">Team Info</a>
+      <a @click=${() => this._navigate("signUp")} class="signUp">Sign Up</a>
+        </div>
+            <slot></slot>
 
       </div>`;
   }
