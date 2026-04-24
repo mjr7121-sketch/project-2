@@ -28,7 +28,7 @@ export class TeamRoster extends DDDSuper(I18NMixin(LitElement)) {
 
     this.coaches = [
       { name: "Coach Tiger", img: "https://tigerwoods.com/wp-content/uploads/2019/04/WordPress_OntheCourse_1.png" },
-      { name: "Coach Rory", img: "https://cloudfront-us-east-1.images.arcpublishing.com/opb/XBQP5FCJ6NJUNKQL35I2IBY6TQ.jpg" },
+      { name: "Coach Rory", img: "https://ogden_images.s3.amazonaws.com/www.altoonamirror.com/images/2025/04/14232016/B4McIlroy.jpg" },
       { name: "Coach John", img: "https://wreg.com/wp-content/uploads/sites/18/2022/11/john-daly-2022-pga-championship-thursday-standing-tight.jpg?strip=1" }
     ];
 
