@@ -34,8 +34,7 @@ export class AboutUs extends DDDSuper(I18NMixin(LitElement)) {
         font-weight: var(--ddd-font-weight-bold);
         margin: 0; 
         margin-top: var(--ddd-spacing-2); 
-    
- 
+        text-align: center;
       }
       .about-us-summary{
         color: light-dark(var(--ddd-theme-default-forestGreen), var(--ddd-theme-default-white));
